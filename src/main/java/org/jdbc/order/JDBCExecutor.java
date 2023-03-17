@@ -24,7 +24,7 @@ public class JDBCExecutor {
     try{
       Connection connection = dbm.getConnection();
       OrderDAO orderDAO = new OrderDAO(connection);
-      Order order = orderDAO.findById(1);
+      Order order = orderDAO.findById(1000);
       System.out.println(order);
     } catch (SQLException e){
       System.err.println(e.getErrorCode());
