@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CustomerDAO extends DataAccessObject<Customer> {
-    private static final String GET_ALL_LMT = "SELECT customer_id, first_name, last_name, email phone," +
+    private static final String GET_ALL_LMT = "SELECT customer_id, first_name, last_name, email, phone," +
             " address, city, state, zipcode FROM customer ORDER BY last_name, first_name LIMIT ?";
 
     public CustomerDAO(Connection connection) {
