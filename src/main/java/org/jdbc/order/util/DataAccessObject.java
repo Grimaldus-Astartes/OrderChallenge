@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.List;
 
 public abstract class DataAccessObject<T extends DataTransferObject> {
   protected final Connection connection;
@@ -16,6 +17,8 @@ public abstract class DataAccessObject<T extends DataTransferObject> {
   }
 
   public abstract T findById(long id);
+
+  public abstract List<T> findAll();
 
   protected int getLastVal(String sequence) {
     int key = 0;

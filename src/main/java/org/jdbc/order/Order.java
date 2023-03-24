@@ -2,6 +2,7 @@ package org.jdbc.order;
 
 import org.jdbc.order.util.DataTransferObject;
 
+import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 
@@ -15,7 +16,7 @@ public class Order implements DataTransferObject {
   private String customerLastName;
   private String customerEmail;
   private Date creationDate;
-  private int totalDue;
+  private BigDecimal totalDue;
   private String status;
   private String salesPersonFirstName;
   private String salesPersonLastName;
@@ -83,11 +84,11 @@ public class Order implements DataTransferObject {
     this.creationDate = creationDate;
   }
 
-  public int getTotalDue() {
+  public BigDecimal getTotalDue() {
     return totalDue;
   }
 
-  public void setTotalDue(int totalDue) {
+  public void setTotalDue(BigDecimal totalDue) {
     this.totalDue = totalDue;
   }
 
@@ -103,15 +104,15 @@ public class Order implements DataTransferObject {
     return salesPersonFirstName;
   }
 
-  public void setSalesPersonFirstName(String salesPersonFirstName) {
+  public void setSalespersonFirstName(String salesPersonFirstName) {
     this.salesPersonFirstName = salesPersonFirstName;
   }
 
-  public String getSalesPersonLastName() {
+  public String getSalespersonLastName() {
     return salesPersonLastName;
   }
 
-  public void setSalesPersonLastName(String salesPersonLastName) {
+  public void setSalespersonLastName(String salesPersonLastName) {
     this.salesPersonLastName = salesPersonLastName;
   }
 
@@ -119,7 +120,7 @@ public class Order implements DataTransferObject {
     return salesPersonEmail;
   }
 
-  public void setSalesPersonEmail(String salesPersonEmail) {
+  public void setSalespersonEmail(String salesPersonEmail) {
     this.salesPersonEmail = salesPersonEmail;
   }
 

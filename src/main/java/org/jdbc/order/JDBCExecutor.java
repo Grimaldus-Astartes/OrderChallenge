@@ -3,6 +3,8 @@ package org.jdbc.order;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 public class JDBCExecutor {
   static String host;
@@ -24,10 +26,11 @@ public class JDBCExecutor {
     try{
       Connection connection = dbm.getConnection();
       OrderDAO orderDAO = new OrderDAO(connection);
-      Order order = orderDAO.findById(1000);
-      System.out.println(order);
+      List<Order> orders = orderDAO.getOrdersForCustomer(789);
+      orders.forEach(System.out::println);
+
     } catch (SQLException e){
-      System.err.println(e.getErrorCode());
+      System.err.println(e.getErrorCode() + " ffdfdfd");
       e.printStackTrace();
     }
   }
