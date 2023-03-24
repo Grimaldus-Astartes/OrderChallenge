@@ -25,9 +25,8 @@ public class JDBCExecutor {
             userName, password);
     try{
       Connection connection = dbm.getConnection();
-      OrderDAO orderDAO = new OrderDAO(connection);
-      List<Order> orders = orderDAO.getOrdersForCustomer(789);
-      orders.forEach(System.out::println);
+      CustomerDAO customerDAO = new CustomerDAO(connection);
+      customerDAO.findallSorted(20).forEach(System.out::println);
 
     } catch (SQLException e){
       System.err.println(e.getErrorCode() + " ffdfdfd");
